@@ -29,6 +29,6 @@ Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용�
 그외 사용이 허용되어있는 한국인 여자 성우의 종합 12시간 이상의 목소리 데이터셋 12,853개를 찾았다.  
 (https://www.kaggle.com/bryanpark/korean-single-speaker-speech-dataset)  
 
-
+> Progress  
 - [ ] Tacotron 모델 테스트 (하는중)
 - [x] 목소리 데이터 셋 수집 
