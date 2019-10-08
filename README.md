@@ -22,12 +22,12 @@
 > Research 
 
 목소리 엔진을 만드는데에는 Tacotron을 사용하는 방법과 Deep Voice를 사용하는 방법이 가장 쉽고 확실한 방법이라 생각했다.  
-Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용하려고 한다. 
+Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용하려고 한다.  
 (https://github.com/carpedm20/multi-Speaker-tacotron-tensorflow)  
 
 데이터셋을 수집하려고 이것 저것 찾다가 상업적 용도로 사용이 금지되어있지만,
-그외 사용이 허용되어있는 한국인 여자 성우의 종합 12시간 이상의 목소리 데이터셋 12,853개를 찾았다. 
-(https://www.kaggle.com/bryanpark/korean-single-speaker-speech-dataset)
+그외 사용이 허용되어있는 한국인 여자 성우의 종합 12시간 이상의 목소리 데이터셋 12,853개를 찾았다.  
+(https://www.kaggle.com/bryanpark/korean-single-speaker-speech-dataset)  
 
 
 - [ ] Tacotron 모델 테스트 (하는중)
