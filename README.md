@@ -31,25 +31,24 @@ Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용�
 
 학습을 위한 환경 설정  
 진짜 환경 설정 하기 너무 힘들었습니다. 그래서 나중에 할때를 위해서 에러 해결 방법을 적으려고 합니다.
-- conda create --name tacotron python=3.6 pip
-- conda activate tacotron
-- pip install tensorflow==1.3 (conda install tensorflow=1.3 하면 안됨)
-- requriment.txt 수정
-  - librosa==0.5.1 -> librosa==0.4.3 (안바꾸면 에러남)
-  - scipy==0.19.1 -> scipy (안바꾸면 에러남)
-- pip install -r requirements.txt
-- alignment.json 저장할때 utf-8 대신 cp949로 저장 (안바꾸면 에러남)
-- python -c "import nltk; nltk.download('punkt')"
-
-- python -m datasets.generate_data ./datasets/YOUR_DATASET/alignment.json
-- conda install -c menpo ffmpeg
-
-- hparams.py 수정
-  - 11번째줄 'cleaners': 'english_cleaners', -> 'cleaners': 'korean_cleaners',
+- `conda create --name tacotron python=3.6 pip`
+- `conda activate tacotron`
+- `pip install tensorflow==1.3` (`conda install tensorflow=1.3` 하면 안됨)
+- `requriment.txt` 수정
+  - `librosa==0.5.1` -> `librosa==0.4.3` (안바꾸면 에러남)
+  - `scipy==0.19.1` -> `scipy` (안바꾸면 에러남)
+- `pip install -r requirements.txt`
+- `alignment.json` 저장할때 `utf-8` 대신 `cp949`로 저장 (안바꾸면 에러남)
+- `python -c "import nltk; nltk.download('punkt')"`
+- `python -m datasets.generate_data ./datasets/YOUR_DATASET/alignment.json`
+- `conda install -c menpo ffmpeg`
+- `hparams.py` 수정
+  - 11번째줄 `'cleaners': 'english_cleaners',` -> `'cleaners': 'korean_cleaners',`
   - 한국어 설정일 때 바꾸어야함 (안바꾸면 에러남)
-- train.py 수정
+- `train.py` 수정
   - 13번째 줄 주석처리 -> `# log(' [*] git recv-parse HEAD:\n%s' % get_git_revision_hash())`
   - 로그 찍는 과정에서 나는 오류 (안바꾸면 에러남)
+- `tensorboard --logdir=./logs/luna_2019-.../`로 텐서보드 사용 가능
 
 > Progress  
 - [ ] Tacotron 모델 테스트 (하는중)
