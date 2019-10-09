@@ -29,6 +29,22 @@ Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용�
 그외 사용이 허용되어있는 한국인 여자 성우의 종합 12시간 이상의 목소리 데이터셋 12,853개를 찾았다.  
 (https://www.kaggle.com/bryanpark/korean-single-speaker-speech-dataset)  
 
+학습을 위한 환경 설정  
+진짜 환경 설정 하기 너무 힘들었습니다. 그래서 나중에 할때를 위해서 에러 해결 방법을 적으려고 합니다.
+- conda create --name tacotron python=3.6 pip
+- conda activate tacotron
+- pip install tensorflow==1.3 (conda install tensorflow=1.3 하면 안됨)
+- requriment.txt 수정
+  - librosa==0.5.1 -> librosa==0.4.3
+  - scipy==0.19.1 -> scipy
+- pip install -r requirements.txt
+- alignment.json 저장할때 utf-8 대신 cp949로 저장
+- python -c "import nltk; nltk.download('punkt')"
+
+- python -m datasets.generate_data ./datasets/YOUR_DATASET/alignment.json
+- conda install -c menpo ffmpeg
+
+
 > Progress  
 - [ ] Tacotron 모델 테스트 (하는중)
 - [x] 목소리 데이터 셋 수집 
