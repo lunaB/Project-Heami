@@ -50,7 +50,14 @@ Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용�
   - 13번째 줄 주석처리 -> `# log(' [*] git recv-parse HEAD:\n%s' % get_git_revision_hash())`
   - 로그 찍는 과정에서 나는 오류 (안바꾸면 에러남)
 - `tensorboard --logdir=./logs/luna_2019-.../`로 텐서보드 사용 가능
-- `500step 체크포인트에서 에서 에러나서 문제 해결중`
+
+
+- tmp
+  - python train.py --data_path=datasets/luna
+  - python train.py --data_path=datasets/luna --load_path logs/luna_2019-10-10_00-50-02
+  - python app.py --load_path logs/luna_2019-10-10_00-50-02 --num_speakers=1
+  - python synthesizer.py --load_path logs/luna_2019-10-10_00-50-02 --text "이거  실화냐"
+  
 > Progress  
 - [ ] Tacotron 모델 테스트 (하는중)
 - [x] 목소리 데이터 셋 수집 
