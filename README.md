@@ -40,17 +40,26 @@ Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용�
   - `scipy==0.19.1` -> `scipy` (안바꾸면 에러남)
 - `pip install -r requirements.txt`
 - `alignment.json` 저장할때 `utf-8`로 저장
-  - `cp949`로 하면 당장은 돌아가지만 train 500step test에서 jamo 에러가 남.
-  - `utf-8`로 잘 바뀌지 않는것 같다면 메모장으로 incoding을 바꾸어 저장
+  - 에러만 보고 `cp949`로 바꾸면 안됨 test에서 에러남
+  - `utf-8`로 잘 바뀌지 않는것 같다면 메모장으로 encoding을 `utf-8`로 바꾸어 저장
 - `dataset.generate_data.py`의 40번째줄 수정 `with open(config.metadata_path) as f:` -> `with open(config.metadata_path, encoding='utf-8') as f:`
+- `['NanumBarunGothic']` 폰트가 워닝이 뜨면 test에서 생성된 plot에 한글이 나오지 않음 utils.plot.py를 수정해서 고칠 수 있슴.
+  - 6번줄 `matplotlib.rc('font', family="NanumBarunGothic")` 주석처리
+  - 추가
+    - `import matplotlib.font_manager as fm`
+    - `font_fname = './utils/NanumBarunGothic.ttf'`
+    - `font_name = fm.FontProperties(fname=font_fname).get_name()`
+    - `matplotlib.rc('font', family=font_name)`
+```
 - `python -c "import nltk; nltk.download('punkt')"`
 - `python -m datasets.generate_data ./datasets/YOUR_DATASET/alignment.json`
 - `conda install -c menpo ffmpeg`
+  - test에서 문제가 생긴다면 지웠다 다시 깔아보는 방법이 있슴.
 - `hparams.py` 수정
   - 11번째줄 `'cleaners': 'english_cleaners',` -> `'cleaners': 'korean_cleaners',`
 - `train.py` 수정
   - 13번째 줄 주석처리 -> `# log(' [*] git recv-parse HEAD:\n%s' % get_git_revision_hash())`
-- `tensorboard --logdir=./logs/luna_2019-.../`로 텐서보드 사용 가능
+- `tensorboard --logdir=./logs/luna_2019-.../`로 텐서보드 사용 가능 
 
 
 - tmp
