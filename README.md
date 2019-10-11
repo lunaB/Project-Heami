@@ -39,16 +39,17 @@ Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용�
   - `librosa==0.5.1` -> `librosa==0.4.3` (안바꾸면 에러남)
   - `scipy==0.19.1` -> `scipy` (안바꾸면 에러남)
 - `pip install -r requirements.txt`
-- `alignment.json` 저장할때 `utf-8` 대신 `cp949`로 저장 (안바꾸면 에러남)
+- `alignment.json` 저장할때 `utf-8`로 저장
+  - `cp949`로 하면 당장은 돌아가지만 train 500step test에서 jamo 에러가 남.
+  - `utf-8`로 잘 바뀌지 않는것 같다면 메모장으로 incoding을 바꾸어 저장
+- `dataset.generate_data.py`의 40번째줄 수정 `with open(config.metadata_path) as f:` -> `with open(config.metadata_path, encoding='utf-8') as f:`
 - `python -c "import nltk; nltk.download('punkt')"`
 - `python -m datasets.generate_data ./datasets/YOUR_DATASET/alignment.json`
 - `conda install -c menpo ffmpeg`
 - `hparams.py` 수정
   - 11번째줄 `'cleaners': 'english_cleaners',` -> `'cleaners': 'korean_cleaners',`
-  - 한국어 설정일 때 바꾸어야함 (안바꾸면 에러남)
 - `train.py` 수정
   - 13번째 줄 주석처리 -> `# log(' [*] git recv-parse HEAD:\n%s' % get_git_revision_hash())`
-  - 로그 찍는 과정에서 나는 오류 (안바꾸면 에러남)
 - `tensorboard --logdir=./logs/luna_2019-.../`로 텐서보드 사용 가능
 
 
