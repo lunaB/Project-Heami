@@ -46,11 +46,18 @@ Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용�
 - `['NanumBarunGothic']` 폰트가 워닝이 뜨면 test에서 생성된 plot에 한글이 나오지 않음 utils.plot.py를 수정해서 고칠 수 있슴.
   - 6번줄 `matplotlib.rc('font', family="NanumBarunGothic")` 주석처리
   - 추가
-    - `import matplotlib.font_manager as fm`
-    - `font_fname = './utils/NanumBarunGothic.ttf'`
-    - `font_name = fm.FontProperties(fname=font_fname).get_name()`
-    - `matplotlib.rc('font', family=font_name)`
-```
+    ```
+    import matplotlib.font_manager as fm
+    font_path = './utils/NanumBarunGothic.ttf'
+    fontprop = fm.FontProperties(fname=font_path)
+    ```
+  - `fontproperties=fontprop` 추가 
+    ```
+    plt.xlabel(xlabel, fontproperties=fontprop)
+    plt.ylabel(ylabel, fontproperties=fontprop)
+    ....
+    plt.title(text, fontproperties=fontprop)
+    ```
 - `python -c "import nltk; nltk.download('punkt')"`
 - `python -m datasets.generate_data ./datasets/YOUR_DATASET/alignment.json`
 - `conda install -c menpo ffmpeg`
