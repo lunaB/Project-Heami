@@ -76,5 +76,5 @@ Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용�
   - python synthesizer.py --load_path logs/luna_2019-10-10_00-50-02 --text "이거  실화냐"
   
 > Progress  
-- [ ] Tacotron 모델 테스트 (하는중)
+- [x] Tacotron 모델 테스트 (하는중)
 - [x] 목소리 데이터 셋 수집 
