@@ -78,3 +78,7 @@ Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용�
 > Progress  
 - [x] Tacotron 모델 테스트 (하는중)
 - [x] 목소리 데이터 셋 수집 
+
+## 인공감정
+-공부중인 자료
+  - http://aidev.co.kr/aemotion/482
