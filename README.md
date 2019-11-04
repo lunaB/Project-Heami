@@ -82,3 +82,5 @@ Tacotron은 carpedm20님이 한국어용으로 만들어놓은 모델을 이용�
 ## 인공감정
 -공부중인 자료
   - http://aidev.co.kr/aemotion/482
+  - http://aidev.co.kr/chatbot/7844
+  - https://www.youtube.com/watch?v=T4wjg9_E3K4 (목적에 매우 부합하는 학습자료인것 같다)
