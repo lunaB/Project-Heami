@@ -21,6 +21,6 @@
 ## Voice engine
 [음성엔진 시도](https://github.com/lunaB/Project-Heami/blob/master/try_VoiceAI)
 ## Face generator
-** GAN ** 기반으로 하고싶어서 공부중
+**GAN** 기반으로 하고싶어서 공부중
 ## Text generator
 GPT2 기반으로 테스트 해봤슴
